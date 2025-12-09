@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Galería de Coches</title>
+    </head>
+    <body>
+        <h1>Lista de Coches</h1>
+
+        <label>Buscar nombre del coche: </label>
+        <input type="text" id="buscarCoches" placeholder="Escribe el nombre del coche">
+        
+        <button id="buscar">buscar</button><br><br>
+
+        <label>Buscar por filtros: </label>
+
+        <label>Filtrar por marca: </label>
+        <select id="filtroMarca">
+        <option value="mercedes">Mercedes</option>
+        <option value="buggati">Buggati</option>
+        <option value="rolls-royce">Rolls-Royce</option>
+        <option value="pagani">Pagani</option>
+        </select>
+
+        <label>Filtrar por año: </label>
+        <input type="number" id="filtroAño">
+
+        <label>Filtrar por precio: </label>
+        <input type="number" id="filtroPrecio" placeholder="Precio en millones">
+
+        <button id="aplicarFiltros">aplicar filtros</button>
+
+        <div id="resultado"></div>
+
+        <script>
+            const botonCargar = document.getElementById("buscar");
+            const botonAplicarFiltros = document.getElementById("aplicarFiltros");
+            const inputCoche = document.getElementById("buscarCoches"); 
+            const selectMarca = document.getElementById("filtroMarca");
+            const selectAño = document.getElementById("filtroAño");
+            const selectPrecio = document.getElementById("filtroPrecio");
+            const resultado = document.getElementById("resultado");
+
+            function mostrarCoches(Coches) {}
+        </script>
+
+    </body>
+</html>

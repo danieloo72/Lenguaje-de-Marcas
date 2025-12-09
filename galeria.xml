@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<galeria>
+    <elemento>
+        <marca>Mercedes</marca>
+        <modelo>Maybach Exelero</modelo>
+        <año>2005</año>
+        <precio>8 millones</precio>
+        <descripcion></descripcion>
+    </elemento>
+    
+    <elemento>
+        <marca>Bugatti</marca>
+        <modelo>Centodieci</modelo>
+        <año>2022</año>
+        <precio>9 millones</precio>
+        <descripcion></descripcion>
+    </elemento>
+        
+    <elemento>
+        <marca>Rolls-Royce</marca>
+        <modelo>Sweptail</modelo>
+        <año>2017</año>
+        <precio>13 millones</precio>
+        <descripcion></descripcion>
+    </elemento>
+        
+    <elemento>
+        <marca>Pagani</marca>
+        <modelo>Zonda HP Barchetta</modelo>
+        <año>2017</año>
+        <precio>17 millones</precio>
+        <descripcion></descripcion>
+    </elemento>
+        
+    <elemento>
+        <marca>Bugatti</marca>
+        <modelo>La Voiture Noire</modelo>
+        <año>2021</año>
+        <precio>18.7 millones</precio>
+        <descripcion></descripcion>
+    </elemento>
+        
+    <elemento>
+        <marca>Rolls-Royce</marca>
+        <modelo>Boat Tail</modelo>
+        <año>2021</año>
+        <precio>28 millones</precio>
+        <descripcion></descripcion>
+    </elemento>
+        
+    <elemento>
+        <marca>Rolls-Royce</marca>
+        <modelo>La Rose Noire Droptail</modelo>
+        <año>2023</año>
+        <precio>28 millones</precio>
+        <descripcion></descripcion>
+    </elemento>
+</galeria>
