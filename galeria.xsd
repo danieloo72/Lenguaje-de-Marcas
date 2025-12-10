@@ -12,6 +12,7 @@
                             <xs:element name="año" type="xs:positiveInteger"/>
                             <xs:element name="precio" type="xs:string"/>
                             <xs:element name="descripcion" type="xs:string"/>
+                            <xs:element name="imagen" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

@@ -13,36 +13,147 @@
         <button id="buscar">buscar</button><br><br>
 
         <label>Buscar por filtros: </label>
-
         <label>Filtrar por marca: </label>
         <select id="filtroMarca">
-        <option value="mercedes">Mercedes</option>
-        <option value="buggati">Buggati</option>
-        <option value="rolls-royce">Rolls-Royce</option>
-        <option value="pagani">Pagani</option>
+            <option value="">Todas las marcas</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="bugatti">Bugatti</option>
+            <option value="rolls-royce">Rolls-Royce</option>
+            <option value="pagani">Pagani</option>
         </select>
 
         <label>Filtrar por año: </label>
-        <input type="number" id="filtroAño">
+        <input type="number" id="filtroAño" min="0" placeholder="Año">
 
-        <label>Filtrar por precio: </label>
+        <label>Filtrar por precio máximo: </label>
         <input type="number" id="filtroPrecio" placeholder="Precio en millones">
 
         <button id="aplicarFiltros">aplicar filtros</button>
-
+        <hr>
         <div id="resultado"></div>
 
+        <dialog id="modalCoche">
+            <h2 id="modalTitulo">Marca Modelo</h2>
+            <p><strong>Año: </strong> <span id="modalAño"></span></p>
+            <p><strong>Precio: </strong> <span id="modalPrecio"></span></p>
+            <hr>
+            <p><strong>Descripción: </strong></p>
+            <p id="modalDescripcion"></p>
+
+            <button id="cerrarModal">cerrar</button>
+        </dialog>
+
         <script>
-            const botonCargar = document.getElementById("buscar");
+            let todosLosCoches = [];
+
+            const botonBuscar = document.getElementById("buscar");
             const botonAplicarFiltros = document.getElementById("aplicarFiltros");
             const inputCoche = document.getElementById("buscarCoches"); 
             const selectMarca = document.getElementById("filtroMarca");
-            const selectAño = document.getElementById("filtroAño");
-            const selectPrecio = document.getElementById("filtroPrecio");
+            const inputAño = document.getElementById("filtroAño");
+            const inputPrecio = document.getElementById("filtroPrecio");
             const resultado = document.getElementById("resultado");
 
-            function mostrarCoches(Coches) {}
-        </script>
+            const modal = document.getElementById("modalCoche");
+            const botonCerrarModal = document.getElementById("cerrarModal");
+            const modalTitulo = document.getElementById("modalTitulo");
+            const modalAño = document.getElementById("modalAño");
+            const modalPrecio = document.getElementById("modalPrecio");
+            const modalDescripcion = document.getElementById("modalDescripcion");
 
+            function abrirModal(coche) {
+                modalTitulo.innerText = `${coche.marca} ${coche.modelo}`;
+                modalAño.innerText = coche.año;
+                modalPrecio.innerText = coche.precio;
+                modalDescripcion.innerText = coche.descripcion;
+
+                modal.showModal();
+            }
+
+            botonCerrarModal.addEventListener("click", () => {
+                modal.close();
+            });
+
+            function mostrarCoches(coches) {
+                resultado.innerHTML = "";
+                if (coches.length == 0) {
+                    resultado.innerHTML = "<p>No se ha encontrado ningún coche</p>";
+                    return;
+                }
+                resultado.innerHTML = `<h2>Coches encontrados (${coches.length}):</h2>`;
+
+                coches.forEach((coche) => {
+                    const divCoche = document.createElement("div");
+                    divCoche.className = "informacionCoche";
+
+                    divCoche.innerHTML += `
+                        <h3>${coche.marca} ${coche.modelo}</h3>
+                        <img src="${coche.imagen}" alt="${coche.modelo}">
+                    `;
+
+                    const botonModal = document.createElement("button");
+                    botonModal.innerText = "Más Información";
+
+                    botonModal.addEventListener("click", function() {
+                        abrirModal(coche);
+                    });
+
+                    divCoche.appendChild(botonModal);
+                    resultado.appendChild(divCoche);
+                });
+            }
+
+            function filtrar() {
+                const textoBusqueda = inputCoche.value.toLowerCase();
+                const marcaSeleccionada = selectMarca.value.toLowerCase();
+                const añoSeleccionado = inputAño.value ? parseInt(inputAño.value) : null;
+                const precioSeleccionado = inputPrecio.value ? parseInt(inputPrecio.value): null;
+
+                const cochesFiltrados = todosLosCoches.filter((coche) => {
+                    const coincideMarca = marcaSeleccionada ? coche.marca.toLowerCase() === marcaSeleccionada : true;
+                    const coincideAño = añoSeleccionado ? coche.año === añoSeleccionado : true;
+                    const coincidePrecio = precioSeleccionado ? parseInt(coche.precio) <= precioSeleccionado : true;
+                    const coincideBusqueda = textoBusqueda === "" || coche.marca.toLowerCase().includes(textoBusqueda) || coche.modelo.toLowerCase().includes(textoBusqueda);
+
+                    return coincideMarca && coincideAño && coincidePrecio && coincideBusqueda;
+                });
+
+                mostrarCoches(cochesFiltrados);
+            }
+
+            botonAplicarFiltros.addEventListener("click", filtrar);
+
+            botonBuscar.addEventListener("click", function () {
+                fetch("galeria.xml")
+                    .then((response) => response.text())
+                    .then((data) => {
+                        const parser = new DOMParser();
+                        const xml = parser.parseFromString(data, "text/xml");
+
+                        todosLosCoches = [];
+                        const cochesXML = xml.getElementsByTagName("coche");
+
+                        for (let coche of cochesXML) {
+                            let imagenUrl = coche.getElementsByTagName("imagen")[0]?.textContent;
+                            todosLosCoches.push({
+                                marca: coche.getElementsByTagName("marca")[0]?.textContent || "Desconocido",  
+                                modelo: coche.getElementsByTagName("modelo")[0]?.textContent || "Desconocido",   
+                                año: parseInt(coche.getElementsByTagName("año")[0]?.textContent) || 0,  
+                                precio: coche.getElementsByTagName("precio")[0]?.textContent || "Consultar",
+                                descripcion: coche.getElementsByTagName("descripcion")[0]?.textContent || "Sin descripción",
+                                imagen: imagenUrl
+                            });
+                        }
+                        mostrarCoches(todosLosCoches);
+                    })
+                    .catch(() => {
+                        resultado.innerHTML = "<p>Error al cargar</p>";
+                    });
+            });
+            inputCoche.addEventListener("input", filtrar);
+            selectMarca.addEventListener("change", filtrar);
+            inputAño.addEventListener("input", filtrar);
+            inputPrecio.addEventListener("input", filtrar);
+        </script>
     </body>
 </html>
