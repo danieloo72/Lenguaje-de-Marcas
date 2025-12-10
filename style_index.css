@@ -1,0 +1,240 @@
+
+/* IMPORTAR FUENTES DE LUJO */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* --- GENERAL & DARK MODE --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0f0f0f; /* Fondo muy oscuro */
+    color: #f0f0f0;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37; /* Dorado */
+    margin-bottom: 40px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+/* --- CONTROLES DE FILTRO --- */
+.filtros-container {
+    background: #1a1a1a;
+    padding: 20px 30px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 900px;
+}
+
+label {
+    color: #888;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input, select {
+    background-color: #0f0f0f;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 10px;
+    margin: 5px 15px 15px 0;
+    border-radius: 2px;
+}
+
+input:focus, select:focus {
+    border-color: #D4AF37;
+    outline: none;
+}
+
+/* --- BOTONES PREMIUM --- */
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+#mostrarTodosCoches {
+    background-color: transparent;
+    border: 1px solid #D4AF37;
+    color: #D4AF37;
+}
+
+#mostrarTodosCoches:hover {
+    background-color: #D4AF37;
+    color: #000;
+}
+
+#borrar {
+    background-color: #333;
+    color: #fff;
+}
+
+#borrar:hover {
+    background-color: #c0392b;
+}
+
+#botonRegistro {
+    background: linear-gradient(45deg, #D4AF37, #AA8A2E);
+    color: #000;
+    margin-top: 50px;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+}
+
+#botonRegistro:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 30px rgba(212, 175, 55, 0.5);
+}
+
+/* --- GRID --- */
+#resultado {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+/* --- TARJETAS DE LUJO (Sin números) --- */
+.informacionCoche {
+    background: #161616;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.informacionCoche:hover {
+    transform: translateY(-10px);
+    border-color: #D4AF37;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.informacionCoche img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    filter: brightness(0.9);
+    transition: filter 0.3s;
+}
+
+.informacionCoche:hover img {
+    filter: brightness(1.1);
+}
+
+.informacionCoche h3 {
+    margin: 20px 0 10px 0;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.informacionCoche button {
+    margin: 0 20px 20px 20px;
+    background-color: transparent;
+    color: #888;
+    border: 1px solid #444;
+    border-radius: 0;
+    font-size: 0.8rem;
+}
+
+.informacionCoche button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* --- MODAL OSCURO Y GRANDE --- */
+dialog {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 0;
+    width: 95%; /* Ocupa casi todo el ancho en móviles */
+    max-width: 900px; /* CAMBIO: Mucho más ancho en PC */
+    box-shadow: 0 25px 80px rgba(0,0,0,0.95);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#modalTitulo {
+    background-color: #000;
+    color: #D4AF37;
+    font-family: 'Playfair Display', serif;
+    padding: 50px 30px; 
+    font-size: 2.5rem;
+    border-bottom: 1px solid #333;
+    text-align: center;
+    margin: 0;
+}
+
+.modal-content {
+    padding: 60px;
+}
+
+/* Estilos de texto dentro del modal más grandes */
+dialog p {
+    color: #ccc;
+    font-size: 1.2rem; 
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+dialog strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+dialog hr {
+    border-top: 1px solid #D4AF37; 
+    opacity: 0.3;
+    margin: 30px 0;
+}
+
+#cerrarModal {
+    background-color: #c0392b;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+/* --- SEPARADOR PRINCIPAL --- */
+hr.main-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #D4AF37, transparent);
+    width: 100%;
+    opacity: 0.5;
+    margin: 40px 0;
+}

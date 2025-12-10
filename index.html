@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Galería de Coches</title>
+        <link rel="stylesheet" href="style_index.css">
     </head>
     <body>
         <h1>Lista de Coches</h1>
@@ -10,7 +11,7 @@
         <label>Buscar nombre del coche: </label>
         <input type="text" id="buscarCoches" placeholder="Escribe el nombre del coche">
         
-        <button id="buscar">buscar</button><br><br>
+        <button id="mostrarTodosCoches">Mostrar todos los coches</button><br><br>
 
         <label>Buscar por filtros: </label>
         <label>Filtrar por marca: </label>
@@ -28,7 +29,7 @@
         <label>Filtrar por precio máximo: </label>
         <input type="number" id="filtroPrecio" placeholder="Precio en millones">
 
-        <button id="aplicarFiltros">aplicar filtros</button>
+        <button id="borrar">borrar</button>
         <hr>
         <div id="resultado"></div>
 
@@ -39,15 +40,17 @@
             <hr>
             <p><strong>Descripción: </strong></p>
             <p id="modalDescripcion"></p>
-
             <button id="cerrarModal">cerrar</button>
         </dialog>
+
+        <button id="botonRegistro">Ir a Registro</button>
 
         <script>
             let todosLosCoches = [];
 
-            const botonBuscar = document.getElementById("buscar");
-            const botonAplicarFiltros = document.getElementById("aplicarFiltros");
+            const botonMostrarTodosCoches = document.getElementById("mostrarTodosCoches");
+            const botonBorrar = document.getElementById("borrar");
+            const botonRegistro = document.getElementById("botonRegistro");
             const inputCoche = document.getElementById("buscarCoches"); 
             const selectMarca = document.getElementById("filtroMarca");
             const inputAño = document.getElementById("filtroAño");
@@ -121,9 +124,20 @@
                 mostrarCoches(cochesFiltrados);
             }
 
-            botonAplicarFiltros.addEventListener("click", filtrar);
+            botonBorrar.addEventListener("click", function() {
+                inputCoche.value = "";
+                selectMarca.value = "";
+                inputAño.value = "";
+                inputPrecio.value = "";
 
-            botonBuscar.addEventListener("click", function () {
+                filtrar();
+            });
+
+            botonRegistro.addEventListener("click", () => {
+                window.location.href = "registro.html";
+            });
+
+            botonMostrarTodosCoches.addEventListener("click", function () {
                 fetch("galeria.xml")
                     .then((response) => response.text())
                     .then((data) => {
