@@ -33,6 +33,8 @@
         <div id="resultado"></div>
 
         <script>
+            let todosLosCoches = [];
+
             const botonCargar = document.getElementById("buscar");
             const botonAplicarFiltros = document.getElementById("aplicarFiltros");
             const inputCoche = document.getElementById("buscarCoches"); 
@@ -41,7 +43,41 @@
             const selectPrecio = document.getElementById("filtroPrecio");
             const resultado = document.getElementById("resultado");
 
-            function mostrarCoches(Coches) {}
+            function mostrarCoches(coches) {
+                if (coches.length == 0) {
+                    resultado.innerHTML = "<p>No se ha encontrado ningún coche</p>";
+                    return;
+                }
+
+                resultado.innerHTML = `<h2>Coches (${coches.length}):</h2>`;
+
+                coches.forEach((coches) => {
+                    resultado.innerHTML += `
+                    <div>
+                        <h3>${coches.marca} ${coches.modelo}</h3>
+                        <p><strong>Año de salida al mercado: </strong> ${coches.año}</p>
+                        <p><strong>Precio: </strong> ${coches.precio}</p>
+                        <p><strong>Descripción: </strong> ${coches.descripcion}</p>
+                        <hr>
+                    </div>
+                    `;
+                })
+            }
+
+            function filtrar() {
+                const textoBusqueda = inputBuscar.value.toLowerCase();
+                const marcaSeleccionada = selectMarca.value;
+                const añoSeleccionado = selectAño.value;
+                const precioSeleccionado = selectPrecio.value;
+
+                const cochesFiltrados = todosLosCoches.filter((e) => {
+                    const coincideMarca = e.marca
+                    .toLowerCase()
+                    .includes(textoBusqueda);
+
+                    const coincideAño = 
+                })
+            }
         </script>
 
     </body>

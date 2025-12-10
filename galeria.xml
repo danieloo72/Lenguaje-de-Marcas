@@ -1,58 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<galeria>
-    <elemento>
+<!DOCTYPE coches SYSTEM "coches.xsd">
+<coches>
+    <coche>
         <marca>Mercedes</marca>
         <modelo>Maybach Exelero</modelo>
         <año>2005</año>
         <precio>8 millones</precio>
-        <descripcion></descripcion>
-    </elemento>
+        <descripcion>El Mercedes-Maybach Exelero es un automóvil único presentado en 2005 y 
+        desarrollado por Daimler junto a Fulda como prototipo para probar neumáticos de ultra-alto 
+        rendimiento; combina lujo extremo con un rendimiento excepcional gracias a su motor V12 
+        biturbo de 5.9 litros que produce alrededor de 700 CV y más de 1.000 Nm de par, 
+        permitiéndole alcanzar 351 km/h y acelerar de 0 a 100 km/h en unos 4,4 segundos. Su 
+        diseño coupé de gran tamaño destaca por una presencia imponente, líneas elegantes y agresivas, 
+        una enorme parrilla frontal y un interior ultralujoso acabado en cuero, aluminio y fibra de 
+        carbono. Existe solo una unidad, lo que lo convierte en una pieza de colección de altísimo 
+        valor, conocida por su exclusividad, su estética poderosa y su combinación de artesanía, 
+        tecnología y prestaciones extremas.</descripcion>
+    </coche>
     
-    <elemento>
+    <coche>
         <marca>Bugatti</marca>
         <modelo>Centodieci</modelo>
         <año>2022</año>
         <precio>9 millones</precio>
-        <descripcion></descripcion>
-    </elemento>
+        <descripcion>El Bugatti Centodieci es un hiperdeportivo exclusivo presentado en 2019 como 
+        homenaje al clásico Bugatti EB110 de los años 90; utiliza el mismo motor W16 de 8.0 litros 
+        con cuatro turbos del Chiron, pero potenciado hasta unos 1.600 CV, lo que le permite acelerar 
+        de 0 a 100 km/h en unos 2,4 segundos y alcanzar una velocidad máxima limitada electrónicamente 
+        a 380 km/h. Su diseño combina elementos modernos con guiños al EB110, como las tomas de aire 
+        laterales redondas y una silueta más angular, y cuenta con una producción extremadamente 
+        limitada de solo diez unidades, cada una construida de manera artesanal. El interior sigue la 
+        línea de lujo y deportividad característicos de Bugatti, y su exclusividad, potencia y estética 
+        lo convierten en una de las creaciones más deseadas en el mundo de los hiperdeportivos.</descripcion>
+    </coche>
         
-    <elemento>
+    <coche>
         <marca>Rolls-Royce</marca>
         <modelo>Sweptail</modelo>
         <año>2017</año>
         <precio>13 millones</precio>
-        <descripcion></descripcion>
-    </elemento>
+        <descripcion>El Rolls-Royce Sweptail es un automóvil de lujo hecho a medida y presentado en 
+        2017, creado especialmente para un cliente que buscaba un coche inspirado en los grandes 
+        modelos clásicos y en los yates de lujo; utiliza la base de un Rolls-Royce Phantom Coupé y 
+        destaca por su diseño único con una línea de techo tipo “boat tail”, una enorme superficie 
+        acristalada y una zaga elegante que recuerda a embarcaciones exclusivas. Su interior es 
+        minimalista y exquisito, con abundante madera, cuero de la más alta calidad y detalles 
+        artesanales, incluyendo un compartimento especial para una botella de champagne y copas hechas 
+        a medida. Solo existe una unidad del Sweptail, lo que lo convierte en uno de los automóviles 
+        más exclusivos y costosos jamás construidos, reconocido por su nivel extremo de 
+        personalización, su estética inspirada en el lujo náutico y su presencia imponente.</descripcion>
+    </coche>
         
-    <elemento>
+    <coche>
         <marca>Pagani</marca>
         <modelo>Zonda HP Barchetta</modelo>
         <año>2017</año>
         <precio>17 millones</precio>
-        <descripcion></descripcion>
-    </elemento>
+        <descripcion>El Pagani Zonda HP Barchetta es una edición ultralimitada presentada en 2017 
+        como uno de los últimos y más exclusivos homenajes al legendario Zonda, creado personalmente 
+        por Horacio Pagani y fabricado en solo tres unidades, una de las cuales fue destinada al 
+        propio fundador; destaca por su diseño barchetta sin techo, con un parabrisas 
+        extremadamente bajo, aletas traseras sobre las ruedas y una carrocería de fibra de 
+        carbono con detalles azules que refuerzan su carácter artesanal y radical. Está impulsado 
+        por un motor V12 atmosférico de 7.3 litros suministrado por AMG, capaz de producir 
+        alrededor de 800 CV, acoplado a una transmisión manual de seis velocidades que intensifica 
+        el enfoque purista del coche. Su interior combina lujo y deportividad con cuero, aluminio 
+        y fibra de carbono trabajados a mano, manteniendo la esencia artesanal de Pagani. 
+        Considerado uno de los modelos más exclusivos y costosos jamás creados por la marca, el 
+        Zonda HP Barchetta es una pieza de colección que simboliza el cierre épico de una era y 
+        la culminación de la filosofía de precisión, arte y pasión que define a Pagani.</descripcion>
+    </coche>
         
-    <elemento>
+    <coche>
         <marca>Bugatti</marca>
         <modelo>La Voiture Noire</modelo>
         <año>2021</año>
         <precio>18.7 millones</precio>
-        <descripcion></descripcion>
-    </elemento>
+        <descripcion>El Bugatti La Voiture Noire es un hiperdeportivo único presentado en 2019 como 
+        un homenaje moderno al legendario Bugatti Type 57 SC Atlantic, reinterpretando su elegancia 
+        en una carrocería completamente artesanal construida en fibra de carbono con un acabado n
+        egro profundo que refuerza su presencia misteriosa y sofisticada; está impulsado por el 
+        icónico motor W16 de 8.0 litros con cuatro turbos que genera unos 1.500 CV y 1.600 Nm de 
+        par, ofreciendo un rendimiento extremo comparable al del Chiron pese a su enfoque más 
+        orientado al lujo y la exclusividad. Su diseño destaca por una silueta fluida y minimalista, 
+        una iluminación trasera continua, seis salidas de escape y un trabajo aerodinámico refinado, 
+        mientras que el interior, aunque nunca se ha mostrado en detalle para respetar la privacidad 
+        del comprador, se sabe que fue completamente personalizado con materiales de la más alta 
+        calidad. Como pieza única creada para un solo cliente, el La Voiture Noire se considera 
+        uno de los automóviles más exclusivos y costosos del mundo, símbolo máximo del artesanato 
+        y la sofisticación de Bugatti.</descripcion>
+    </coche>
         
-    <elemento>
+    <coche>
         <marca>Rolls-Royce</marca>
         <modelo>Boat Tail</modelo>
         <año>2021</año>
         <precio>28 millones</precio>
-        <descripcion></descripcion>
-    </elemento>
+        <descripcion>El Rolls-Royce Boat Tail es un automóvil de lujo extremadamente exclusivo 
+        presentado en 2021, creado como una obra totalmente artesanal e inspirada en el diseño 
+        náutico de los yates de alta gama; utiliza la plataforma del Phantom y se caracteriza por 
+        su carrocería con una elegante parte trasera tipo “boat tail”, fabricada con paneles de 
+        madera y aluminio que se abren como un cofre para revelar un set de picnic de lujo, 
+        refrigeradores para champagne y mobiliario integrado. Su diseño es profundamente personalizado 
+        para cada uno de los tres clientes para los que se produjo, y combina un estilo atemporal 
+        con tecnología moderna de Rolls-Royce, un interior meticulosamente elaborado con maderas 
+        seleccionadas, cuero premium y detalles hechos a mano. Debido a su producción limitadísima 
+        y a su nivel extremo de personalización, se considera uno de los coches más exclusivos y 
+        costosos del mundo, una verdadera pieza de arte automotriz concebida para representar el 
+        máximo lujo a medida.</descripcion>
+    </coche>
         
-    <elemento>
+    <coche>
         <marca>Rolls-Royce</marca>
         <modelo>La Rose Noire Droptail</modelo>
         <año>2023</año>
         <precio>28 millones</precio>
-        <descripcion></descripcion>
-    </elemento>
-</galeria>
+        <descripcion>El Rolls-Royce La Rose Noire Droptail es un automóvil de ultra-lujo presentado 
+        en 2023 como una de las ediciones más exclusivas de la serie Coachbuild, creado de forma 
+        totalmente artesanal y concebido como una pieza única inspirada en la rosa Black Baccara, 
+        conocida por sus tonalidades oscuras y su simbolismo romántico; utiliza un motor V12 biturbo 
+        y la plataforma del Droptail, destacándose por su diseño roadster con una carrocería 
+        esculpida y un tono rojo profundo especialmente desarrollado, acompañado de detalles en 
+        fibra de carbono y metal pulido. Su interior es una obra de arte compuesta por más de mil 
+        piezas de madera colocadas manualmente para formar un patrón tridimensional que evoca 
+        pétalos de rosa en movimiento, junto con un reloj Audemars Piguet integrado en el tablero 
+        como pieza desmontable. Como creación exclusiva para un solo cliente y fabricada con un 
+        nivel extremo de personalización y artesanía, el La Rose Noire Droptail es uno de los 
+        automóviles más raros y costosos jamás construidos, símbolo del lujo más íntimo y del 
+        trabajo artístico que caracteriza a Rolls-Royce Coachbuild.</descripcion>
+    </coche>
+</coches>
