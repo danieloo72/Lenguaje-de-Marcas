@@ -2,9 +2,58 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Registro</title>
+    <link rel="stylesheet" href="style_registro.css">
 </head>
 <body>
-    
+    <form id="formularioRegistro">
+        <h1>Registrate:</h1>
+        <label for="nombre">Introduce tu nombre: </label>
+        <input type="text" id="name" name="name" placeholder="Nombre Completo (Obligatorio)">
+        <label for="email">Introduce tu correo electrónico: </label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@mail.com (Obligatorio)">
+        <label for="password">Contraseña: </label>
+        <input type="password" id="contraseña" name="contraseña" placeholder="Mínimo 6 caracteres">
+
+        <select id="cocheFav" required>
+            <option value="">Marca de coche favorita</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="bugatti">Bugatti</option>
+            <option value="rolls-royce">Rolls-Royce</option>
+            <option value="pagani">Pagani</option>
+        </select>
+
+        <button type="submit" id="confirmar">Confirmar</button>
+        <button type="reset" id="resetar">Borrar</button>
+    </form>
+
+    <script>
+        const formulario = document.getElementById("formularioRegistro");
+        const inputName = document.getElementById("name");
+        const inputEmail = document.getElementById("email");
+        const inputPassword = document.getElementById("contraseña");
+        const cocheFav = document.getElementById("cocheFav");
+
+        formulario.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            if (inputName.value.trim() === "" || inputEmail.value.trim() === "" || inputPassword.value.trim() === "" || cocheFav.value === "") {
+                alert("Tienes que completar todos los campos.");
+                return;
+            }
+
+            const nombreValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+            if (!nombreValido.test(inputName.value)) {
+                alert("El nombre tiene que ser solo con letras.");
+                return;
+            }
+
+            if (inputPassword.value.length < 6) {
+                alert("La contraseña tiene que tener mínimo 6 caracteres.");
+                return;
+            }
+            window.location.href = "index.html"
+        });
+    </script>
 </body>
 </html>

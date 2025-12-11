@@ -35,6 +35,7 @@
 
         <dialog id="modalCoche">
             <h2 id="modalTitulo">Marca Modelo</h2>
+            <img id="modalImagen" src="">
             <p><strong>Año: </strong> <span id="modalAño"></span></p>
             <p><strong>Precio: </strong> <span id="modalPrecio"></span></p>
             <hr>
@@ -63,12 +64,14 @@
             const modalAño = document.getElementById("modalAño");
             const modalPrecio = document.getElementById("modalPrecio");
             const modalDescripcion = document.getElementById("modalDescripcion");
+            const modalImagen = document.getElementById("modalImagen");
 
             function abrirModal(coche) {
                 modalTitulo.innerText = `${coche.marca} ${coche.modelo}`;
                 modalAño.innerText = coche.año;
                 modalPrecio.innerText = coche.precio;
                 modalDescripcion.innerText = coche.descripcion;
+                modalImagen.src = coche.imagen;
 
                 modal.showModal();
             }
@@ -137,7 +140,7 @@
                 window.location.href = "registro.html";
             });
 
-            botonMostrarTodosCoches.addEventListener("click", function () {
+            function cargarDatos() {
                 fetch("galeria.xml")
                     .then((response) => response.text())
                     .then((data) => {
@@ -163,7 +166,10 @@
                     .catch(() => {
                         resultado.innerHTML = "<p>Error al cargar</p>";
                     });
-            });
+            }
+            botonMostrarTodosCoches.addEventListener("click", cargarDatos);
+            document.addEventListener("DOMContentLoaded", cargarDatos);
+            
             inputCoche.addEventListener("input", filtrar);
             selectMarca.addEventListener("change", filtrar);
             inputAño.addEventListener("input", filtrar);
