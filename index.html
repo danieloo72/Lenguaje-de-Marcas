@@ -151,13 +151,13 @@
                         const cochesXML = xml.getElementsByTagName("coche");
 
                         for (let coche of cochesXML) {
-                            let imagenUrl = coche.getElementsByTagName("imagen")[0]?.textContent;
+                            let imagenUrl = coche.getElementsByTagName("imagen")[0].textContent;
                             todosLosCoches.push({
-                                marca: coche.getElementsByTagName("marca")[0]?.textContent || "Desconocido",  
-                                modelo: coche.getElementsByTagName("modelo")[0]?.textContent || "Desconocido",   
-                                año: parseInt(coche.getElementsByTagName("año")[0]?.textContent) || 0,  
-                                precio: coche.getElementsByTagName("precio")[0]?.textContent || "Consultar",
-                                descripcion: coche.getElementsByTagName("descripcion")[0]?.textContent || "Sin descripción",
+                                marca: coche.getElementsByTagName("marca")[0].textContent,  
+                                modelo: coche.getElementsByTagName("modelo")[0].textContent,   
+                                año: parseInt(coche.getElementsByTagName("año")[0].textContent),  
+                                precio: coche.getElementsByTagName("precio")[0].textContent,
+                                descripcion: coche.getElementsByTagName("descripcion")[0].textContent,
                                 imagen: imagenUrl
                             });
                         }
